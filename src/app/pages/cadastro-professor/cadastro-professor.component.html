@@ -1,0 +1,65 @@
+<app-default-layout
+    title="Cadastro Professor"
+    (submit)="submit()"
+    (navigate)="navigate()"
+>
+    <form [formGroup]="cadastroProfessorForm">
+        <app-primary-input
+            formControlName="Nome"
+            inputName="nome"
+            type="text"
+            label="Nome"
+            placeHolder="João da Silva"
+        ></app-primary-input>
+
+        <app-primary-input
+            formControlName="Email"
+            inputName="email"
+            type="email"
+            label="E-mail"
+            placeHolder="teste@gmail.com"
+        ></app-primary-input>
+
+        <app-primary-input
+            formControlName="Numero"
+            inputName="Numero"
+            type="text"
+            label="Numero"
+            placeHolder="(11)912345678"
+        ></app-primary-input>
+
+        <app-primary-input
+            formControlName="Rua"
+            inputName="Rua"
+            type="text"
+            label="Rua"
+            placeHolder="Nome da Rua"
+        ></app-primary-input>
+
+        <app-primary-input
+            formControlName="Cidade"
+            inputName="Cidade"
+            type="text"
+            label="Cidade"
+            placeHolder="Nome da Cidade"
+        ></app-primary-input>
+
+        <app-primary-input
+            formControlName="CEP"
+            inputName="CEP"
+            type="text"
+            label="CEP"
+            placeHolder="12345-789"
+        ></app-primary-input>
+
+        <app-primary-input
+            formControlName="Pais"
+            inputName="Pais"
+            type="text"
+            label="País"
+            placeHolder="Nome do País"
+        ></app-primary-input>
+
+
+    </form>
+</app-default-layout>

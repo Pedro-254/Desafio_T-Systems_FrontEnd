@@ -1,0 +1,41 @@
+<div>
+  <app-search></app-search>  <!-- Aqui você está inserindo o SearchComponent -->
+</div>
+
+Exibir lista de alunos
+<div *ngIf="alunos.length > 0; else semAlunos">
+  <h3>Lista de Alunos</h3>
+  <ul>
+    <li *ngFor="let aluno of alunos">
+      <p><strong>Nome:</strong> {{ aluno.nome }}</p>
+      <p><strong>Numero:</strong> {{ aluno.numero }}</p>
+      <p><strong>Email:</strong> {{ aluno.email }}</p>
+      <p><strong>Endereço:</strong> {{ aluno.address.rua }}, {{ aluno.address.cidade }}</p>
+      <p><strong>Salário:</strong> R$ {{ aluno.salary }}</p>
+    </li>
+  </ul>
+</div>
+
+<!-- Caso não haja alunos -->
+<ng-template #semAlunos>
+  <p>Não há alunos cadastrados.</p>
+</ng-template>
+
+<!-- Exibir lista de professores -->
+<div *ngIf="professores.length > 0; else semProfessores">
+  <h3>Lista de Professores</h3>
+  <ul>
+    <li *ngFor="let professor of professores">
+      <p><strong>Nome:</strong> {{ professor.nome }}</p>
+      <p><strong>Numero:</strong> {{ professor.numero }}</p>
+      <p><strong>Email:</strong> {{ professor.email }}</p>
+      <p><strong>Endereço:</strong> {{ professor.address.rua }}, {{ professor.address.cidade }}</p>
+      <p><strong>Salário:</strong> R$ {{ professor.salary }}</p>
+    </li>
+  </ul>
+</div>
+
+<!-- Caso não haja professores -->
+<ng-template #semProfessores>
+  <p>Não há professores cadastrados.</p>
+</ng-template>

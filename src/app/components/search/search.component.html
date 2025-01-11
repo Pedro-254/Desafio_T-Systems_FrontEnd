@@ -1,0 +1,22 @@
+<div>
+  <!-- Botões para alternar entre busca de aluno e professor -->
+  <button (click)="alternarBusca('aluno')" [class.active]="tipoBusca === 'aluno'">Aluno</button>
+  <button (click)="alternarBusca('professor')" [class.active]="tipoBusca === 'professor'">Professor</button>
+
+  <!-- Campo de busca -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Pesquisar por email" />
+
+  <!-- Botão de pesquisa -->
+  <button (click)="pesquisar()">Buscar</button>
+
+  <!-- Exibição do resultado -->
+  <div *ngIf="resultado">
+    <p *ngIf="resultado.mensagem">{{ resultado.mensagem }}</p>
+    <div *ngIf="resultado.email">
+      <p><strong>{{ tipoBusca === 'aluno' ? 'Aluno' : 'Professor' }} Encontrado:</strong></p>
+      <p><strong>Nome:</strong> {{ resultado.nome }}</p>
+      <p><strong>Email:</strong> {{ resultado.email }}</p>
+      <p><strong>Endereço:</strong> {{ resultado.address.rua }}, {{ resultado.address.cidade }} - {{ resultado.address.pais }}</p>
+    </div>
+  </div>
+</div>
